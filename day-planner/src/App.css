@@ -1,0 +1,108 @@
+body {
+  background-color: #f9f5e9;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  border: 2px solid #4e5cd1;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+}
+
+h1, h3 {
+  color: #4e5cd1;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem; 
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem 0; /* Combines top and bottom margin */
+}
+
+input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #4e5cd1;
+  font-size: 1rem;
+  background-color: #d9ddff;
+  color: #4e5cd1;
+  outline: none;
+}
+
+input[type="text"]::placeholder {
+  color: #9da7ff;
+}
+
+button {
+  background-color: #4e5cd1;
+  color: white;
+  border: none;
+  padding: 10px 20px; 
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  white-space: nowrap;
+  transition: background-color 0.3s;
+  margin-left: 10px; 
+}
+
+button:hover {
+  background-color: #3b45b0;
+}
+
+.task-list {
+  border-top: 2px solid #4e5cd1;
+  padding-top: 1rem;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #4e5cd1; 
+}
+
+.task input[type="checkbox"] {
+  margin-right: 1rem;
+}
+
+.task button {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+}
+
+button, .task button:hover {
+  background-color: #4e5cd1;
+  color: white;
+}
+
+.task button:hover {
+  background-color: white;
+  color: #4e5cd1;
+  border: 2px solid #4e5cd1;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #b0b0b0; 
+}

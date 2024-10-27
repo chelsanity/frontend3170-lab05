@@ -35,7 +35,7 @@ h3 {
 form {
   display: flex;
   justify-content: space-between;
-  margin: 1.5rem 0; /* Combines top and bottom margin */
+  margin: 1.5rem 0;
 }
 
 input[type="text"] {
@@ -105,4 +105,26 @@ button, .task button:hover {
 .completed {
   text-decoration: line-through;
   color: #b0b0b0; 
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.filter-buttons button {
+  padding: 6px 15px;
+  border: 1px solid #4e5cd1;
+  background-color: white;
+  color: #4e5cd1;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filter-buttons button:disabled {
+  background-color: #8793fc;
+  color: white;
+  cursor: default;
 }

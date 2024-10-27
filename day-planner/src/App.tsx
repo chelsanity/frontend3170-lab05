@@ -11,6 +11,7 @@ interface TaskType {
 
 const App: React.FC = () => {
   const [tasks, setTasks] = useState<TaskType[]>([]);
+  const [filter, setFilter] = useState<string>('All'); // new filter state
 
   // my function to add a new task
   const addTask = (title: string) => {
@@ -32,13 +33,29 @@ const App: React.FC = () => {
     setTasks(tasks.filter(task => task.id !== taskId));
   };
 
+  // this filters the tasks based on the selected filter
+  const filteredTasks = tasks.filter(task => {
+    if (filter === 'Completed') return task.isCompleted;
+    if (filter === 'Pending') return !task.isCompleted;
+    return true; // shows all tasks if "All" is selected
+  });
+
+  // my filter buttons
   return (
     <div className="container">
       <h1>daily planner</h1>
       <TaskForm addTask={addTask} />
-      <h3>{tasks.filter(task => !task.isCompleted).length} tasks remaining</h3>
+      
+      <div className="filter-buttons">
+        <button onClick={() => setFilter('All')} disabled={filter === 'All'}>All</button>
+        <button onClick={() => setFilter('Completed')} disabled={filter === 'Completed'}>Completed</button>
+        <button onClick={() => setFilter('Pending')} disabled={filter === 'Pending'}>Pending</button>
+      </div>
+
+      <h3>{filteredTasks.filter(task => !task.isCompleted).length} tasks remaining</h3>
+
       <div className="task-list">
-        {tasks.map((task) => (
+        {filteredTasks.map(task => (
           <Task 
             key={task.id} 
             task={task} 

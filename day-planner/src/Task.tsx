@@ -12,13 +12,14 @@ interface TaskProps {
 
 const Task: React.FC<TaskProps> = ({ task, toggleTask, removeTask }) => {
   return (
-    <div className={`task ${task.isCompleted ? 'completed' : ''}`}>
+    <div className="task">
       <input 
         type="checkbox" 
         checked={task.isCompleted} 
         onChange={() => toggleTask(task.id)} 
+        disabled={task.isCompleted} // this disables my checkboxes if task are completed
       />
-      {task.title}
+      <span className={task.isCompleted ? 'completed' : ''}>{task.title}</span>
       <button onClick={() => removeTask(task.id)}>delete</button>
     </div>
   );
